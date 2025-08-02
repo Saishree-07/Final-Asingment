@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { use } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
 export default function ViewEntry({ params }) {
@@ -80,9 +81,11 @@ export default function ViewEntry({ params }) {
                   </div>
                 ) : (
                   <div style={{ position: 'relative', height: '150px' }}>
-                    <img 
+                    <Image 
                       src={file} 
                       alt="attachment"
+                      width={200}
+                      height={150}
                       style={{ 
                         width: '100%', 
                         height: '100%', 

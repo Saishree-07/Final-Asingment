@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
 export default function Dashboard() {
@@ -82,10 +83,12 @@ export default function Dashboard() {
                   📄
                 </div>
               ) : (
-                <img 
+                <Image 
                   src={file} 
                   alt="attachment"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  width={40}
+                  height={40}
+                  style={{ objectFit: 'cover' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';

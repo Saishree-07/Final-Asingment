@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function EntryForm({ entry = null, isEditing = false }) {
   const router = useRouter();
@@ -228,10 +229,12 @@ export default function EntryForm({ entry = null, isEditing = false }) {
               {files.map((file, index) => (
                 <div key={index} className="file-item">
                   {file.type.startsWith('image/') ? (
-                    <img
+                    <Image
                       src={URL.createObjectURL(file)}
                       alt={file.name}
-                      style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '4px' }}
+                      width={40}
+                      height={40}
+                      style={{ objectFit: 'cover', borderRadius: '4px' }}
                     />
                   ) : (
                     <div style={{ 

@@ -97,7 +97,7 @@ export default function SignIn() {
             Demo credentials: demo@example.com / password
           </p>
           <p>
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link href="/auth/signup" className="auth-link">
               Sign up
             </Link>
